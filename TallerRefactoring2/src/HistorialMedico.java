@@ -22,8 +22,8 @@ public class HistorialMedico {
         consultas.add(consulta);
     }
 
-    public void deleteConsulta(Consulta consulta) ElementNotFoundException {
-        int index = consultas.indexOf(consulta)
+    public void deleteConsulta(Consulta consulta) throws ElementNotFoundException{
+        int index = consultas.indexOf(consulta);
         if (index == -1) {
             throw new ElementNotFoundException("Consulta no encontrada: " + consulta);
         } 
@@ -42,8 +42,8 @@ public class HistorialMedico {
         recetasMedicas.add(receta);
     }
 
-    public void deleteReceta(RecetaMedica receta) {
-        int index = recetasMedicas.indexOf(receta)
+    public void deleteReceta(RecetaMedica receta) throws ElementNotFoundException {
+        int index = recetasMedicas.indexOf(receta);
         if (index == -1) {
             throw new ElementNotFoundException("Receta no encontrada: " + receta);
         }
