@@ -32,9 +32,9 @@ public class ServicioMedico {
         return costo;
     }
 
-    public void setCosto(double costo) throws CostNotZeroException {
+    public void setCosto(double costo) throws CostAndDurationNotZeroException {
         if(costo<0){
-            throw new CostNotZeroException("El costo no puede ser menor a 0");
+            throw new CostAndDurationNotZeroException("El costo no puede ser menor a 0");
         }
         this.costo = costo;
     }
@@ -43,8 +43,10 @@ public class ServicioMedico {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
-
+    public void setDuracion(int duracion) throws CostAndDurationNotZeroException {
+        if(duracion<0){
+            throw new CostAndDurationNotZeroException("La duración no puede ser menor a 0");
+        }
         this.duracion = duracion;
     }
 }
