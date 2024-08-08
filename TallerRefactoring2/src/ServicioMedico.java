@@ -32,10 +32,9 @@ public class ServicioMedico {
         return costo;
     }
 
-    public void setCosto(double costo) {
+    public void setCosto(double costo) throws CostNotZeroException {
         if(costo<0){
-            System.out.println("El costo no puede ser menor a 0");
-            return;
+            throw new CostNotZeroException("El costo no puede ser menor a 0");
         }
         this.costo = costo;
     }
